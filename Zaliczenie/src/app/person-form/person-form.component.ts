@@ -1,34 +1,39 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { PersonAndPreference } from '../app.component';
 
 @Component({
   selector: 'app-person-form',
   templateUrl: './person-form.component.html',
-  styleUrls: ['./person-form.component.scss']
+  styleUrls: ['./person-form.component.scss'],
 })
 export class PersonFormComponent implements OnInit {
+  
+
+  public name = '';
+  public familyName = '';
+  public editing = true;
+  public snakeGame: string | null = null;
+  public toDisplay = true;
+
+  // @Input() public data =  new EventEmitter<PersonAndPreference>();
+
   @Output() public formChange = new EventEmitter<string>();
 
-  public name: string = '';
-  public familyName: string = '';
-  public editing = true;
-  public fullName: string | null = null;
+  constructor() {}
 
+  ngOnInit(): void {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  public submit() {
+  public game() {
+    this.toDisplay = !this.toDisplay;
     this.editing = false;
-    this.fullName = this.name + ' ' + this.familyName;
+    this.snakeGame = !this.name + ' ' + !this.familyName;
 
-    this.formChange.emit(this.fullName);
+    this.formChange.emit(this.snakeGame);
   }
 
-  public edit() {
+  public back() {
+    this.toDisplay = !this.toDisplay;
     this.editing = true;
     this.formChange.emit('');
   }
-
 }

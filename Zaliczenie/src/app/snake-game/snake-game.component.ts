@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PersonAndPreference } from '../app.component';
 
 @Component({
   selector: 'app-snake-game',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SnakeGameComponent implements OnInit {
 
-  constructor() { }
+  @Output() public deleteCLicked = new EventEmitter<number>();
+  constructor() {}
+
 
   ngOnInit(): void {
+  }
+
+  public delete(index: number) {
+
+    this.deleteCLicked.emit(index);
   }
 
 }

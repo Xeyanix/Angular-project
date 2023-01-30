@@ -1,36 +1,12 @@
+<app-person-form (formChange)="onFullnameChanged($event)"></app-person-form>
 
-<h3>Who are you?</h3>
+<!-- <hr /> -->
 
-<app-person-form
-  (formChange)="onFullnameChanged($event)"></app-person-form>
+<div *ngIf="snakeGame">
 
-<hr/>
-
-<div *ngIf="fullName">
-  
-  Actions<br/>
-  <button (click)="welcome()" >Welcome</button>
-  <button (click)="byebye()" >ByeBye</button>
-</div>
-
-<br/>
-
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-<!-- <app-test-form (formChange)="onFullnameChanged($event)"> </app-test-form>   -->
-
-
-<div style="margin-top: 20px;margin-bottom: 20px;">
-  <button routerLink="app-snake-game" routerLinkActive="active">Game</button> 
-</div>
-
-<div style="margin-top: 20px;margin-bottom: 20px;border: solid darkblue;min-height: 200px;max-width: 500px;">
-  <app-snake-game>
-
-  </app-snake-game> 
+  <div style="margin-top: 20px;margin-bottom: 20px;border: solid darkblue;min-height: 2000px;max-width: 5000px;">
+    <app-snake-game>
+      
+    </app-snake-game>
+  </div>
 </div>

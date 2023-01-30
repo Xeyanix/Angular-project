@@ -1,24 +1,23 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+
+export interface PersonAndPreference {
+name: string,
+familyName: string,
+}
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public fullName: string | null = null;
-  constructor() {
-  }
+  public max: number = 4;
+  public snakeGame: string | null = null;
+  public colorClass: string = 'basic';
+  constructor() {}
 
   public onFullnameChanged(fullname: string) {
-    this.fullName = fullname;
-  }
-
-  public welcome() {
-    alert('Welcome ' + this.fullName);
-  }
-
-  public byebye() {
-    alert('Bye ' + this.fullName);
+    this.snakeGame = fullname;
   }
 }
