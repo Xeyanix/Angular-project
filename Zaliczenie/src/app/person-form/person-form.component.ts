@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PersonAndPreference } from '../app.component';
+// import { PersonAndPreference } from '../app.component';
 
 @Component({
   selector: 'app-person-form',
@@ -7,8 +7,6 @@ import { PersonAndPreference } from '../app.component';
   styleUrls: ['./person-form.component.scss'],
 })
 export class PersonFormComponent implements OnInit {
-  
-
   public name = '';
   public familyName = '';
   public editing = true;
