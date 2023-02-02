@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class PersonFormComponent implements OnInit {
   public name = '';
-  public familyName = '';
+  public Email = '';
   public editing = true;
   public snakeGame: string | null = null;
   public toDisplay = true;
@@ -17,6 +17,7 @@ export class PersonFormComponent implements OnInit {
 
   @Output() public formChange = new EventEmitter<string>();
 
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -24,7 +25,7 @@ export class PersonFormComponent implements OnInit {
   public game() {
     this.toDisplay = !this.toDisplay;
     this.editing = false;
-    this.snakeGame = !this.name + ' ' + !this.familyName;
+    this.snakeGame = !this.name + ' ' + !this.Email;
 
     this.formChange.emit(this.snakeGame);
   }
