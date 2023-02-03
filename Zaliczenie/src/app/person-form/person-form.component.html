@@ -1,40 +1,40 @@
-       
-<div *ngIf="toDisplay">
+<div  *ngIf="toDisplay">
 
-        <h3>Welcome to NG-SNAKE</h3>
+        <h3>WELCOME   TO NG-SNAKE</h3>
+  <div class="form">
 
+        <h2> PLAYER NAME: </h2>
         <input [(ngModel)]="name"
         [disabled]="!editing"
         placeholder="Enter your Name"/>
-        <br/>
-
-
+        
+        
+        <h2> EMAIL: </h2>  
         <input
-        name="myInput" 
-        ng-model="myInput"
         type="email"
         [(ngModel)]="Email"
         [disabled]="!editing"
         placeholder="Enter email adress" 
         >
         <br/>
-      
-        
+   </div>
 </div>
 
-<button *ngIf="editing"
-[disabled] = "!name || !Email"
+<div class="play-button">
+
+        <button *ngIf="editing"
+        [disabled] = "!name || !Email"
         (click)="game()" 
-      >
+        >
         Play
 </button>
 
-
-<button *ngIf="!editing"
+</div>
+<div class="back-button">
+        <button *ngIf="!editing"
         (click)="back()">Back</button>
-
-<br/>
-
+        
+</div>
 
 
 

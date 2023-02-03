@@ -1,42 +1,11 @@
 
 <app-person-form (formChange)="onFullnameChanged($event)"></app-person-form>
 
-<!-- <div>
-
-    <ngx-snake #game> </ngx-snake>
-
-    <div class="start-stop-reset">
-       
-        <button class="start" >Start</button>
-        <br />
-        <button class="pause" (click)="game.actionStop()">Pause</button>
-        <br />
-        <button class="reset" (click)="game.actionReset()">Reset</button>
-        <br />
-    </div>
-
-    <div class="position-button">
-        <button class="up" (click)="game.actionUp()">></button>
-        <br />
-        <button class="left" (click)="game.actionLeft()"><</button>
-        <br />
-        <button class="right" (click)="game.actionRight()">></button>
-        <br />
-        <button class="down" (click)="game.actionDown()"> ></button>
-        
-    </div>
-    <button class="center">O</button>
-
-
-</div> -->
-
-<!-- <hr /> -->
 
 <div *ngIf="snakeGame">
 
     <app-snake-game>
 
     </app-snake-game>
-
 
 </div>
