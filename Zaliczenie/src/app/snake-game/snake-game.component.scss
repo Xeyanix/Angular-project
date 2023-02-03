@@ -1,22 +1,118 @@
+div {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    min-height: 600px;
+    max-width: 298px;
+    margin: auto;
 
+}
+
+.buttons {
+    margin-top: 30px
+}
 
 button {
-    background-color: cyan;
-    font-size: 20px;
-    text-rendering: auto;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-shadow: none;
-    display: auto;
-    align-items: flex-start;
-    cursor: default;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 10px;
-    padding-top: 10px;
     border-width: 1px;
+    border-radius: 5px;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-style: italic;
+}
+
+.start-stop-reset {
     margin-top: 30px;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    top: 6px;
+    // border: solid;
+}
 
 
+.start {
+    background-color: lightgreen;
+    position: relative;
+    right: 103px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.pause {
+    background-color: red;
+    position: relative;
+    bottom: 32px;
+    right: 3.5px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+}
+
+.reset {
+    background-color: aqua;
+    position: relative;
+    left: 99.5px;
+    bottom: 64px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+
+}
+
+//strzałeczki
+.position-button {
+    font-size: larger;
+    position: relative;
+    min-height: 70px;
+    max-width: 140px;
+    margin: auto;
+    bottom: 45px;
+
+}
+
+.up {
+    background-color: yellow;
+    transform: rotate(-0.25turn);
+    width: 40px;
+    height: 40px;
+
+}
+
+.left {
+    background-color: yellow;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 40px;
+
+
+}
+
+.right {
+    background-color: yellow;
+    position: relative;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    left: 40px;
+
+
+}
+
+.down {
+    background-color: yellow;
+    position: relative;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+
+
+}
+
+.center {
+    position: relative;
+    bottom: 165px;
+    width: 40px;
+    height: 40px;
 }

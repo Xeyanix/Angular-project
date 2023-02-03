@@ -1,14 +1,26 @@
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
+<div>
+    <ngx-snake #game> </ngx-snake>
 
+    <div class="start-stop-reset">
+        <button class="start" (click)="game.actionStart()">Start</button>
+        <br />
+        <button class="pause" (click)="game.actionStop()">Stop</button>
+        <br />
+        <button class="reset" (click)="game.actionReset()">Reset</button>
+        <br />
+    </div>
 
-<ngx-snake #game></ngx-snake>
-
-<button (click)="game.actionStart()">Start</button>
-<button (click)="game.actionStop()">Stop</button>
-<button (click)="game.actionReset()">Reset</button>
-<button (click)="game.actionUp()">Up</button>
-<button (click)="game.actionLeft()">Left</button>
-<button (click)="game.actionRight()">Right</button>
-<button (click)="game.actionDown()">Down</button>
+    <div class="position-button">
+        <button class="up" (click)="game.actionUp()">></button>
+        <br />
+        <button class="left" (click)="game.actionLeft()"><</button>
+        <br />
+        <button class="right" (click)="game.actionRight()">></button>
+        <br />
+        <button class="down" (click)="game.actionDown()">></button>
+    </div>
+    <button class="center">O</button>
+</div>

@@ -22,8 +22,6 @@
         
 </div>
 
-
-
 <button *ngIf="editing"
 [disabled] = "!name || !Email"
         (click)="game()" 
@@ -31,10 +29,13 @@
         Play
 </button>
 
+
 <button *ngIf="!editing"
         (click)="back()">Back</button>
 
 <br/>
+
+
 
 
 

@@ -8,24 +8,17 @@ h3 {
 button {
     appearance: auto;
     font-size: 20px;
-    text-rendering: auto;
-    color: buttontext;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    text-transform: none;
-    text-shadow: none;
     display: inline-block;
     text-align: center;
-    align-items: flex-start;
-    // cursor: default;
     box-sizing: border-box;
     margin: auto;
     display: flex;
-    border-width: 1px;
-    border-style: outset;
-    border-color: buttonborder;
+    border-width: 1,8px;
     border-image: initial;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: lightblue;
 }
 
 input {
