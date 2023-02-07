@@ -9,6 +9,40 @@
     min-height: 0;
     top: 6px;
     border: solid;
+
+    .form-control {
+    
+        &:first-of-type {
+            label{
+                font-weight: bold;
+            }
+        }
+    }
+
+    label {
+        margin-left: 15px;
+        position: relative;
+    }
+
+    .error {
+        color: red;
+    }
+
+    input {
+        position: relative;
+        padding: 20px;
+        margin: auto;
+        display: flex;
+        width: 300px;
+        border: solid;
+        border-color: lightblue;
+        border-width: 2px;
+        border-radius: 8px;
+        padding: 5px;
+        font-size: 15px;
+
+    }
+
 }
 
 h3 {
@@ -17,10 +51,6 @@ h3 {
 
 }
 
-label {
-    margin-left: 15px;
-    position: relative;
-}
 
 .play-button {
     position: relative;
@@ -50,23 +80,3 @@ button {
     width: 300px;
     border-radius: 8px;
 }
-
-input {
-    position: relative;
-    padding: 20px;
-    margin: auto;
-    display: flex;
-    width: 300px;
-    border: solid;
-    border-color: lightblue;
-    border-width: 2px;
-    border-radius: 8px;
-    padding: 5px;
-    font-size: 15px;
-
-}
-
-.error {
-    color: red;
-}
-

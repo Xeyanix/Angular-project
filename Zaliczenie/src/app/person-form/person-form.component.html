@@ -2,11 +2,12 @@
 
         <h3>WELCOME TO NG-SNAKE</h3>
         <form class="form" #form="ngForm">
+
                 <div class="form-control">
                         <label for="name"> PLAYER NAME: </label>
 
-                        <input #name="ngModel" type="text" id="name" name="name" required [(ngModel)]="snakeForm.name"
-                                [disabled]="!editing" placeholder="Enter your Name" >
+                        <input #name="ngModel" type="text" id="name" name="name" [(ngModel)]="snakeForm.name"
+                                [disabled]="!editing" placeholder="Enter your Name" required>
 
                         <span *ngIf="name.touched && name.errors?.['required']" class="error">
                                 {{ validationErros.required }}
@@ -30,10 +31,7 @@
         </form>
 
         <div class="play-button">
-
-                <button *ngIf="editing" 
-                [disabled]="form.invalid"
-                        (click)="game()">
+                <button *ngIf="editing" [disabled]="form.invalid" (click)="game()">
                         Play
                 </button>
         </div>
