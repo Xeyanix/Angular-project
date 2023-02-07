@@ -7,8 +7,21 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./person-form.component.scss'],
 })
 export class PersonFormComponent implements OnInit {
-  public name = '';
-  public Email = '';
+  
+  public snakeForm: {
+    name: string;
+    Email: string;
+  } = {
+    name: ''!,
+    Email: ''!,
+  };
+
+  public validationErros = {
+    required: 'To pole jest wymagane',
+    Email: 'Podałeś błędny email. Wpisz prawidłowy email',
+  };
+
+
   public editing = true;
   public snakeGame: string | null = null;
   public toDisplay = true;
@@ -17,7 +30,6 @@ export class PersonFormComponent implements OnInit {
 
   @Output() public formChange = new EventEmitter<string>();
 
-
   constructor() {}
 
   ngOnInit(): void {}
@@ -25,8 +37,8 @@ export class PersonFormComponent implements OnInit {
   public game() {
     this.toDisplay = !this.toDisplay;
     this.editing = false;
-    this.snakeGame = !this.name + ' ' + !this.Email;
-
+    this.snakeGame = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
+    // this.snakeGame = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.snakeGame);
   }
 

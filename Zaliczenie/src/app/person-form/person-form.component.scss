@@ -14,10 +14,10 @@
 h3 {
     margin-top: 125px;
     text-align: center;
- 
+
 }
 
-h2 {
+label {
     margin-left: 15px;
     position: relative;
 }
@@ -65,3 +65,8 @@ input {
     font-size: 15px;
 
 }
+
+.error {
+    color: red;
+}
+
