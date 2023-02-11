@@ -8,13 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SnakeGameComponent implements OnInit {
 
-  public snakeForm: {
-    name: string;
-    Email: string;
-  } = {
-    name: ''!,
-    Email: ''!,
-  };
+
   
   @Output() public deleteCLicked = new EventEmitter<number>();
   constructor() {}

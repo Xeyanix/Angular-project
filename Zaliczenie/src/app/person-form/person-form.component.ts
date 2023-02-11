@@ -7,7 +7,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./person-form.component.scss'],
 })
 export class PersonFormComponent implements OnInit {
-  
   public snakeForm: {
     name: string;
     Email: string;
@@ -21,11 +20,9 @@ export class PersonFormComponent implements OnInit {
     Email: 'Podałeś błędny email. Wpisz prawidłowy email',
   };
 
-
   public editing = true;
-  public snakeGame: string | null = null;
+  public table: string | null = null;
   public toDisplay = true;
-
   // @Input() public data =  new EventEmitter<PersonAndPreference>();
 
   @Output() public formChange = new EventEmitter<string>();
@@ -34,14 +31,12 @@ export class PersonFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public game() {
+  public play() {
     this.toDisplay = !this.toDisplay;
     this.editing = false;
-    this.snakeGame = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
+    this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
     // this.snakeGame = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
-    this.formChange.emit(this.snakeGame);
-
-    
+    this.formChange.emit(this.table);
   }
 
   public back() {
@@ -50,6 +45,3 @@ export class PersonFormComponent implements OnInit {
     this.formChange.emit('');
   }
 }
-
-
-

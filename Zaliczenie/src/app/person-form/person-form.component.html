@@ -4,16 +4,18 @@
     <div class="form-control">
       <label for="name"> PLAYER NAME: </label>
 
-      <input
-        #name="ngModel"
-        type="text"
-        id="name"
-        name="name"
-        [(ngModel)]="snakeForm.name"
-        [disabled]="!editing"
-        placeholder="Enter your Name"
-        required
-      />
+
+  <input
+  
+  #name="ngModel"
+  type="text"
+  id="name"
+  name="name"
+  [(ngModel)]="snakeForm.name"
+  [disabled]="!editing"
+  placeholder="Enter your Name"
+  required
+  />
 
       <span *ngIf="name.touched && name.errors?.['required']" class="error">
         {{ validationErros.required }}
@@ -43,7 +45,7 @@
   </form>
 
   <div class="play-button">
-    <button *ngIf="editing" [disabled]="form.invalid" (click)="game()">
+    <button *ngIf="editing" [disabled]="form.invalid" (click)="play()">
       Play
     </button>
   </div>
@@ -51,5 +53,3 @@
 <div class="back-button">
   <button *ngIf="!editing" (click)="back()">Back</button>
 </div>
-
-hello {{ snakeForm.name }}
