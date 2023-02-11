@@ -1,42 +1,55 @@
 <div *ngIf="toDisplay">
+  <h3>WELCOME TO NG-SNAKE</h3>
+  <form class="form" #form="ngForm">
+    <div class="form-control">
+      <label for="name"> PLAYER NAME: </label>
 
-        <h3>WELCOME TO NG-SNAKE</h3>
-        <form class="form" #form="ngForm">
+      <input
+        #name="ngModel"
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="snakeForm.name"
+        [disabled]="!editing"
+        placeholder="Enter your Name"
+        required
+      />
 
-                <div class="form-control">
-                        <label for="name"> PLAYER NAME: </label>
+      <span *ngIf="name.touched && name.errors?.['required']" class="error">
+        {{ validationErros.required }}
+      </span>
+    </div>
 
-                        <input #name="ngModel" type="text" id="name" name="name" [(ngModel)]="snakeForm.name"
-                                [disabled]="!editing" placeholder="Enter your Name" required>
+    <div class="form-control">
+      <label for="email"> EMAIL: </label>
+      <input
+        #email="ngModel"
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="snakeForm.Email"
+        [disabled]="!editing"
+        placeholder="Enter email adress"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        required
+      />
+      <span *ngIf="email.touched && email.errors?.['required']" class="error">
+        {{ validationErros.required }}
+      </span>
+      <span *ngIf="email.touched && email.errors?.['pattern']" class="error">
+        {{ validationErros.Email }}
+      </span>
+    </div>
+  </form>
 
-                        <span *ngIf="name.touched && name.errors?.['required']" class="error">
-                                {{ validationErros.required }}
-                        </span>
-                </div>
-
-                <div class="form-control">
-                        <label for="email"> EMAIL: </label>
-                        <input #email="ngModel" id="email" name="email" type="email" [(ngModel)]="snakeForm.Email"
-                                [disabled]="!editing" placeholder="Enter email adress"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-
-                        <span *ngIf="email.touched && email.errors?.['required']" class="error">
-                                {{ validationErros.required }}
-                        </span>
-                        <span *ngIf="email.touched && email.errors?.['pattern']" class="error">
-                                {{ validationErros.Email }}
-                        </span>
-                </div>
-
-        </form>
-
-        <div class="play-button">
-                <button *ngIf="editing" [disabled]="form.invalid" (click)="game()">
-                        Play
-                </button>
-        </div>
+  <div class="play-button">
+    <button *ngIf="editing" [disabled]="form.invalid" (click)="game()">
+      Play
+    </button>
+  </div>
 </div>
 <div class="back-button">
-        <button *ngIf="!editing" (click)="back()">Back</button>
-
+  <button *ngIf="!editing" (click)="back()">Back</button>
 </div>
+
+hello {{ snakeForm.name }}

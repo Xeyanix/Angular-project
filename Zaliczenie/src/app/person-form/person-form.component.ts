@@ -40,6 +40,8 @@ export class PersonFormComponent implements OnInit {
     this.snakeGame = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
     // this.snakeGame = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.snakeGame);
+
+    
   }
 
   public back() {
@@ -48,3 +50,6 @@ export class PersonFormComponent implements OnInit {
     this.formChange.emit('');
   }
 }
+
+
+

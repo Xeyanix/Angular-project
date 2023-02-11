@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { PersonAndPreference } from '../app.component';
+// import { PersonAndPreference } from '../app.component';
 
 @Component({
   selector: 'app-snake-game',
@@ -8,6 +8,14 @@ import { PersonAndPreference } from '../app.component';
 })
 export class SnakeGameComponent implements OnInit {
 
+  public snakeForm: {
+    name: string;
+    Email: string;
+  } = {
+    name: ''!,
+    Email: ''!,
+  };
+  
   @Output() public deleteCLicked = new EventEmitter<number>();
   constructor() {}
 
