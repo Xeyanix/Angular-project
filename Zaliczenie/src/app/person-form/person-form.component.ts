@@ -19,11 +19,9 @@ export class PersonFormComponent implements OnInit {
     required: 'To pole jest wymagane',
     Email: 'Podałeś błędny email. Wpisz prawidłowy email',
   };
-
+  public toDisplay = true;
   public editing = true;
   public table: string | null = null;
-  public toDisplay = true;
-  // @Input() public data =  new EventEmitter<PersonAndPreference>();
 
   @Output() public formChange = new EventEmitter<string>();
 
@@ -32,11 +30,13 @@ export class PersonFormComponent implements OnInit {
   ngOnInit(): void {}
 
   public play() {
-    this.toDisplay = !this.toDisplay;
+   
     this.editing = false;
     this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
-    // this.snakeGame = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
+    // this.table = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.table);
+
+
   }
 
   public back() {

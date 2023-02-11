@@ -1,4 +1,4 @@
-<div *ngIf="toDisplay">
+<!-- <div *ngIf="toDisplay"> -->
   <h3>WELCOME TO NG-SNAKE</h3>
   <form class="form" #form="ngForm">
     <div class="form-control">
@@ -6,7 +6,6 @@
 
 
   <input
-  
   #name="ngModel"
   type="text"
   id="name"
@@ -20,6 +19,8 @@
       <span *ngIf="name.touched && name.errors?.['required']" class="error">
         {{ validationErros.required }}
       </span>
+
+      
     </div>
 
     <div class="form-control">
@@ -49,7 +50,6 @@
       Play
     </button>
   </div>
-</div>
-<div class="back-button">
-  <button *ngIf="!editing" (click)="back()">Back</button>
-</div>
+  <!-- </div> -->
+
+

@@ -1,10 +1,10 @@
 
-<app-person-form (formChange)="onFullnameChanged($event)"></app-person-form>
+<app-person-form  *ngIf="!displayGame" (formChange)="startGame()"></app-person-form>
 
 
-<div  *ngIf="snakeGame">
+<div  *ngIf="displayGame">
 
-    <app-snake-game>
+    <app-snake-game (closegame)="closeGame()">
 
     </app-snake-game>
 

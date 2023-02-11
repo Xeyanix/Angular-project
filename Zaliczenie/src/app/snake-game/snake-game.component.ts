@@ -4,22 +4,21 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-snake-game',
   templateUrl: './snake-game.component.html',
-  styleUrls: ['./snake-game.component.scss']
+  styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
+  public toDisplay = true;
+  public editing = true;
 
-
-  
-  @Output() public deleteCLicked = new EventEmitter<number>();
+  @Output() public closegame = new EventEmitter();
   constructor() {}
 
+ 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  public back() {
+    this.toDisplay = !this.toDisplay;
+    this.editing = true;
+   this.closegame.emit();
   }
-
-  public delete(index: number) {
-
-    this.deleteCLicked.emit(index);
-  }
-
 }
