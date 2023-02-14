@@ -1,6 +1,11 @@
 <div class="back-button">
-  <button (click)="back()">Back</button>
+  <button class="backbutton" (click)="back()">Exit Game</button>
 </div>
+
+  <div  class="welcome-user-text" *ngFor="let item of data; let i = index">
+    Hello {{ item.name }}  
+  </div>
+
 
 <br />
 <div class="game">

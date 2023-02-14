@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-// import { PersonAndPreference } from '../app.component';
+import { Person } from '../app.component';
 
 @Component({
   selector: 'app-person-form',
@@ -25,23 +25,21 @@ export class PersonFormComponent implements OnInit {
 
   @Output() public formChange = new EventEmitter<string>();
 
+  @Output() submit = new EventEmitter<Person>();
+
   constructor() {}
 
   ngOnInit(): void {}
 
   public play() {
-   
+    this.submit.emit({
+      name: this.snakeForm.name,
+    });
+    this.snakeForm.name = '';
+
     this.editing = false;
     this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
     // this.table = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.table);
-
-
-  }
-
-  public back() {
-    this.toDisplay = !this.toDisplay;
-    this.editing = true;
-    this.formChange.emit('');
   }
 }

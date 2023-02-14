@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { PersonAndPreference } from '../app.component';
+import { Person } from '../app.component';
 
 @Component({
   selector: 'app-snake-game',
@@ -7,9 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
-  public toDisplay = true;
-  public editing = true;
-
+  @Input() public data: Array<Person> = [];
   @Output() public closegame = new EventEmitter();
   constructor() {}
 
@@ -17,8 +15,6 @@ export class SnakeGameComponent implements OnInit {
   ngOnInit(): void {}
 
   public back() {
-    this.toDisplay = !this.toDisplay;
-    this.editing = true;
    this.closegame.emit();
   }
 }
