@@ -10,11 +10,11 @@ export interface Person {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   public displayGame = false;
   public snakeGame: string | null = null;
 
-  public PersonName: Array<Person> = []
+  public PersonName: Array<Person> = [];
+
   constructor() {}
 
   public addPersonNameFromInput(data: Person) {

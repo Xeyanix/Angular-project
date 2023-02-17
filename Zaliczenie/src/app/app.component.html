@@ -1,14 +1,12 @@
+<app-person-form *ngIf="!displayGame" (formChange)="startGame()" (name)="addPersonNameFromInput($event)">
 
-<app-person-form  *ngIf="!displayGame" (formChange)="startGame()" (submit)="addPersonNameFromInput($event)" ></app-person-form>
+</app-person-form>
 
 
-<div  *ngIf="displayGame" >
+<div *ngIf=" displayGame">
 
     <app-snake-game (closegame)="closeGame()" [data]="PersonName">
 
     </app-snake-game>
 
 </div>
-
-
-

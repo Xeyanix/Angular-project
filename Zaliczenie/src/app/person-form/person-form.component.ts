@@ -22,17 +22,17 @@ export class PersonFormComponent implements OnInit {
   public toDisplay = true;
   public editing = true;
   public table: string | null = null;
-
+  
   @Output() public formChange = new EventEmitter<string>();
 
-  @Output() submit = new EventEmitter<Person>();
+  @Output() name = new EventEmitter<Person>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   public play() {
-    this.submit.emit({
+    this.name.emit({
       name: this.snakeForm.name,
     });
     this.snakeForm.name = '';
@@ -41,5 +41,8 @@ export class PersonFormComponent implements OnInit {
     this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
     // this.table = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.table);
+
+  
+ 
   }
 }

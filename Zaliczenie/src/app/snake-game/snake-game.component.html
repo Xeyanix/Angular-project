@@ -3,18 +3,19 @@
 </div>
 
   <div  class="welcome-user-text" *ngFor="let item of data; let i = index">
-    Hello {{ item.name }}  
+    Hello, {{ item.name }}! 
   </div>
 
+  <p>time in game: {{ timeGo }} s</p>
 
 <br />
 <div class="game">
   <ngx-snake #game> </ngx-snake>
 
   <div class="start-stop-reset">
-    <button class="start" (click)="game.actionStart()">Start</button>
+    <button class="start" (click)="game.actionStart()" (click)="startTimer()">Start</button>
     <br />
-    <button class="pause" (click)="game.actionStop()">Pause</button>
+    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()" >Pause</button>
     <br />
     <button class="reset" (click)="game.actionReset()">Reset</button>
     <br />
