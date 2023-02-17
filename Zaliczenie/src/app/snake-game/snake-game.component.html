@@ -6,7 +6,7 @@
     Hello, {{ item.name }}! 
   </div>
 
-  <p>time in game: {{ timeGo }} s</p>
+  <div class="time">time in game: {{ timeGo }} seconds</div>
 
 <br />
 <div class="game">
@@ -17,7 +17,7 @@
     <br />
     <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()" >Pause</button>
     <br />
-    <button class="reset" (click)="game.actionReset()">Reset</button>
+    <button class="reset" (click)="game.actionReset()" (click)="resetTimer()">Reset</button>
     <br />
   </div>
 
