@@ -7,14 +7,15 @@ import { Person } from '../app.component';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
+  // public PersonName: Array<Person> = []
   @Input() public data: Array<Person> = [];
   @Output() public closegame = new EventEmitter();
   constructor() {}
 
- 
   ngOnInit(): void {}
 
   public back() {
-   this.closegame.emit();
+    this.closegame.emit();
+    this.data.splice(0);
   }
 }
