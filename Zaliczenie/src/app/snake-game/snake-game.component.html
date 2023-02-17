@@ -1,12 +1,12 @@
 <div class="back-button">
-  <button class="backbutton" (click)="back()"  >Exit Game</button>
+  <button class="backbutton" (click)="back()">Exit Game</button>
 </div>
 
-  <div  class="welcome-user-text" *ngFor="let item of data; let i = index">
-    Hello, {{ item.name }}! 
-  </div>
+<div class="welcome-user-text" *ngFor="let item of data; let i = index">
+  Hello, {{ item.name }}!
+</div>
 
-  <div class="time">time in game: {{ timeGo }} seconds</div>
+<div class="time"> time in game: {{ timeGo }} seconds </div>
 
 <br />
 <div class="game">
@@ -15,7 +15,7 @@
   <div class="start-stop-reset">
     <button class="start" (click)="game.actionStart()" (click)="startTimer()">Start</button>
     <br />
-    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()" >Pause</button>
+    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()">Pause</button>
     <br />
     <button class="reset" (click)="game.actionReset()" (click)="resetTimer()">Reset</button>
     <br />
@@ -24,11 +24,14 @@
   <div class="position-button">
     <button class="up" (click)="game.actionUp()">></button>
     <br />
-    <button class="left" (click)="game.actionLeft()"><</button>
-    <br />
-    <button class="right" (click)="game.actionRight()">></button>
-    <br />
-    <button class="down" (click)="game.actionDown()">></button>
+    <button class="left" (click)="game.actionLeft()">
+      < </button>
+        <br />
+        <button class="right" (click)="game.actionRight()">></button>
+        <br />
+        <button class="down" (click)="game.actionDown()">></button>
   </div>
+
+
   <button class="center">O</button>
 </div>
