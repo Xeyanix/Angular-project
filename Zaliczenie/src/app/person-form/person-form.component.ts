@@ -32,6 +32,7 @@ export class PersonFormComponent implements OnInit {
   ngOnInit(): void {}
 
   public play() {
+   
     this.name.emit({
       name: this.snakeForm.name,
     });
