@@ -7,12 +7,13 @@ import { Person } from '../app.component';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
-  
+  public play = true;
   public seconds = 0;
   public interval: string | number | NodeJS.Timer | undefined;
   public display: string | number | NodeJS.Timer | undefined;
 
   public points = 0;
+  status: any;
 
   @Input() public data: Array<Person> = [];
   @Output() public closegame = new EventEmitter();
@@ -34,12 +35,16 @@ export class SnakeGameComponent implements OnInit {
         this.seconds++;
       }
     }, 1000);
+    this.status = ['Started'];
   }
+
   public pauseTimer() {
     clearInterval(this.interval);
+    this.status = ['Paused'];
   }
 
   public resetTimer() {
     this.seconds = 0;
+    this.status = ['Ready'];
   }
 }
