@@ -44,8 +44,10 @@ export class SnakeGameComponent implements OnInit {
   }
 
   public resetTimer() {
+    clearInterval(this.interval)
     this.seconds = 0;
     this.status = ['Ready'];
+    this.points = 0;
   }
   public gameover() {
     clearInterval(this.interval);//stop licznik
@@ -55,9 +57,5 @@ export class SnakeGameComponent implements OnInit {
   public countPoints() {
     this.points = this.points + 1;
     
-  }
-
-  public resetPoints() {
-    return this.points;
   }
 }
