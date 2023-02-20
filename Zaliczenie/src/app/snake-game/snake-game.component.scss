@@ -9,8 +9,6 @@
     padding: 50px;
     background-color: whitesmoke;
     border-radius: 20px;
-
-  
 }
 
 button {
@@ -36,14 +34,17 @@ button {
     border-width: 2px;
 }
 
-.welcome-user-text{
+
+//info
+.welcome-user-text {
     position: relative;
     border-width: 1px;
     font-size: 35px;
-    margin-left: 10px;
-    margin-top:20px;
+    // margin-left: 10px;
+    margin-top: 20px;
     border-radius: 8px;
     width: 250px;
+    margin: auto;
     text-align: center;
 
 }
@@ -53,10 +54,12 @@ button {
     border-width: 1px;
     font-size: 20px;
     margin-left: 10px;
-    margin-top:20px;
+    margin-top: 20px;
     border-radius: 8px;
     width: 250px;
     text-align: center;
+    margin: auto;
+
 }
 
 .points {
@@ -64,22 +67,26 @@ button {
     border-width: 1px;
     font-size: 20px;
     margin-left: 10px;
-    margin-top:20px;
+    margin-top: 20px;
     border-radius: 8px;
     width: 250px;
     text-align: center;
+    margin: auto;
+
 }
 
-.gamestatus
- {
+.gamestatus {
     position: relative;
     border-width: 1px;
     font-size: 20px;
     margin-left: 10px;
-    margin-top:20px;
+    margin-top: 20px;
     border-radius: 8px;
     width: 250px;
     text-align: center;
+    margin: auto;
+
+
 }
 
 //przyciski
@@ -138,6 +145,7 @@ button {
 .left {
     background-color: yellow;
     position: relative;
+    transform: rotate(-0.50turn);
     right: 40px;
     width: 40px;
     height: 40px;
