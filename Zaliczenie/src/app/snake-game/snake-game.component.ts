@@ -12,12 +12,11 @@ export class SnakeGameComponent implements OnInit {
   public interval: string | number | NodeJS.Timer | undefined;
   public display: string | number | NodeJS.Timer | undefined;
   public status: any;
+  public points = 0;
 
-  public score = 0;
 
   @Input() public data: Array<Person> = [];
   @Output() public closegame = new EventEmitter();
-  
 
   constructor() {}
 
@@ -48,12 +47,17 @@ export class SnakeGameComponent implements OnInit {
     this.seconds = 0;
     this.status = ['Ready'];
   }
-
-  set addScore(val: number) {
-    // this.score+=      //game.foodEaten
+  public gameover() {
+    clearInterval(this.interval);//stop licznik
+    this.status = ['Game Over']; //status game over
   }
 
-  get currentScore() {
-    return this.score;
+  public countPoints() {
+    this.points = this.points + 1;
+    
+  }
+
+  public resetPoints() {
+    return this.points;
   }
 }

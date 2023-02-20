@@ -8,7 +8,7 @@
 
 <div class="time"> Time in game: {{ seconds }}seconds </div>
 
-<div class="points"> Points: {{ score }} </div>
+<div class="points"> Points: {{ points }} </div>
 
 <div class="gamestatus"> Status: {{ status }} </div>
  
@@ -17,21 +17,20 @@
   <ngx-snake #game> </ngx-snake>
 
   <div class="start-stop-reset">
-    <button class="start" (click)="game.actionStart()" (click)="startTimer()">Start</button>
+    <button class="start" (click)="game.actionStart()" (click)="startTimer()" (foodEaten)="countPoints()" (gameOver)="gameover()">Start</button>
     <br />
-    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()">Pause</button>
+    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()" >Pause</button>
     <br />
-    <button class="reset" (click)="game.actionReset()" (click)="resetTimer()">Reset</button>
+    <button class="reset" (click)="game.actionReset()" (click)="resetTimer()" (foodEaten)="resetPoints()">Reset</button>
     <br />
   </div>
 
   <div class="position-button">
     <button class="up" (click)="game.actionUp()">></button>
     <br />
-    <button class="left" (click)="game.actionLeft()">
-      < </button>
-        <br />
-        <button class="right" (click)="game.actionRight()">></button>
+    <button class="left" (click)="game.actionLeft()"><</button>
+    <br />
+    <button class="right" (click)="game.actionRight()">></button>
         <br />
         <button class="down" (click)="game.actionDown()">></button>
   </div>
