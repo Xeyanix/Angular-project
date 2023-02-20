@@ -44,13 +44,13 @@ export class SnakeGameComponent implements OnInit {
   }
 
   public resetTimer() {
-    clearInterval(this.interval)
     this.seconds = 0;
+    clearInterval(this.interval)
     this.status = ['Ready'];
     this.points = 0;
   }
   public gameover() {
-    clearInterval(this.interval);//stop licznik
+    clearInterval(this.interval); //stop licznik
     this.status = ['Game Over']; //status game over
   }
 
