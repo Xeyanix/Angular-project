@@ -11,7 +11,7 @@ export class SnakeGameComponent implements OnInit {
   public seconds = 0;
   public interval: string | number | NodeJS.Timer | undefined;
   public display: string | number | NodeJS.Timer | undefined;
-  public status: any;
+  public status: string="Ready";
   public points = 0;
 
 
@@ -35,23 +35,23 @@ export class SnakeGameComponent implements OnInit {
         this.seconds++;
       }
     }, 1000);
-    this.status = ['Started'];
+    this.status = 'Started';
   }
 
   public pauseTimer() {
     clearInterval(this.interval);
-    this.status = ['Paused'];
+    this.status = 'Paused';
   }
 
   public resetTimer() {
     this.seconds = 0;
     clearInterval(this.interval)
-    this.status = ['Ready'];
+    this.status = 'Ready';
     this.points = 0;
   }
   public gameover() {
     clearInterval(this.interval); //stop licznik
-    this.status = ['Game Over']; //status game over
+    this.status = 'Game Over'; //status game over
   }
 
   public countPoints() {
