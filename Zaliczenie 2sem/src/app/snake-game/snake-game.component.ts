@@ -14,7 +14,7 @@ export class SnakeGameComponent implements OnInit {
   public status: any;
   public display: string | number | NodeJS.Timer | undefined;
 
-  @Input() public data: Array<Person> = [];
+  @Input() public data: Array<Person> = []; //brak przekazywania name z inputa
  
   constructor() {}
 
