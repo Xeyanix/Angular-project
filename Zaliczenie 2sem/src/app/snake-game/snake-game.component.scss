@@ -1,0 +1,178 @@
+
+.game {
+    position: relative;
+    text-align: center;
+    width: 406px;
+    height: 600px;
+    font-size: 20px;
+    margin: auto;
+    border: solid;
+    padding: 50px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+button {
+    border-width: 1px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+
+
+.back-button {
+    position: relative;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.backbutton {
+    width: 200px;
+    border-width: 2px;
+}
+
+
+//info
+.welcome-user-text {
+    position: relative;
+    border-width: 1px;
+    font-size: 35px;
+    // margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 250px;
+    margin: auto;
+    text-align: center;
+
+}
+
+.time {
+    position: relative;
+    border-width: 1px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.points {
+    position: relative;
+    border-width: 1px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.gamestatus {
+    position: relative;
+    border-width: 1px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    margin: auto;
+
+
+}
+
+//przyciski
+.start-stop-reset {
+    margin-top: 30px;
+    position: relative;
+    top: 6px;
+    // border: solid;
+}
+
+.start {
+    background-color: lightgreen;
+    position: relative;
+    right: 103px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.pause {
+    background-color: red;
+    position: relative;
+    bottom: 40px;
+    right: 3.5px;
+    padding-left: 21px;
+    padding-right: 21px;
+
+}
+
+.reset {
+    background-color: aqua;
+    position: relative;
+    left: 99.5px;
+    bottom: 80px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+//strzałeczki
+.position-button {
+    position: relative;
+    min-height: 70px;
+    max-width: 140px;
+    margin: auto;
+    bottom: 60px;
+    // border: solid;
+    border-radius: 20px;
+}
+
+.up {
+    background-color: yellow;
+    transform: rotate(-0.25turn);
+    width: 40px;
+    height: 40px;
+}
+
+.left {
+    background-color: yellow;
+    position: relative;
+    transform: rotate(-0.50turn);
+    right: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.right {
+    background-color: yellow;
+    position: relative;
+    bottom: 40px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.down {
+    background-color: yellow;
+    position: relative;
+    bottom: 41px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+}
+
+.center {
+    position: relative;
+    bottom: 181px;
+    width: 40px;
+    height: 40px;
+}
