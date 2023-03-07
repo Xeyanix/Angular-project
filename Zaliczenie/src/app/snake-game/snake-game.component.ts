@@ -7,13 +7,11 @@ import { Person } from '../app.component';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
-  public play = true;
   public seconds = 0;
   public interval: string | number | NodeJS.Timer | undefined;
-  public display: string | number | NodeJS.Timer | undefined;
-  public status: any;
   public points = 0;
-
+  public status: any;
+  public display: string | number | NodeJS.Timer | undefined;
 
   @Input() public data: Array<Person> = [];
   @Output() public closegame = new EventEmitter();
@@ -22,7 +20,7 @@ export class SnakeGameComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public back() {
+  public exit() {
     this.closegame.emit();
     this.data.splice(0);
   }

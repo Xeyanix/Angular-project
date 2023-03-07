@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Person } from '../app.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-person-form',
@@ -19,20 +20,18 @@ export class PersonFormComponent implements OnInit {
     required: 'To pole jest wymagane',
     Email: 'Podałeś błędny email. Wpisz prawidłowy email',
   };
-  public toDisplay = true;
+
   public editing = true;
   public table: string | null = null;
   
   @Output() public formChange = new EventEmitter<string>();
-
   @Output() name = new EventEmitter<Person>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  public play() {
-   
+  public play(): void{
     this.name.emit({
       name: this.snakeForm.name,
     });
@@ -42,8 +41,6 @@ export class PersonFormComponent implements OnInit {
     this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
     // this.table = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
     this.formChange.emit(this.table);
-
-  
- 
+   
   }
 }

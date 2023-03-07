@@ -11,7 +11,6 @@
     border: solid;
 
     .form-control {
-
         &:first-of-type {
             label {
                 font-weight: bold;
@@ -22,6 +21,7 @@
     label {
         margin-left: 15px;
         position: relative;
+        font-weight: bold;
     }
 
     .error {

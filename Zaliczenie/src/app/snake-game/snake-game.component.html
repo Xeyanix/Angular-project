@@ -1,8 +1,8 @@
 <div class="back-button">
-  <button class="backbutton" (click)="back()">Exit Game</button>
+  <button class="backbutton" (click)="exit()">Exit Game</button>
 </div>
 <br/>
-<div class="welcome-user-text" *ngFor="let item of data; let i = index">
+<div class="welcome-user-text" *ngFor="let item of data">
   Hello, {{ item.name }}!
 </div>
 <br />

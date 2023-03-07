@@ -3,11 +3,12 @@
 </app-person-form>
 
 
-<div *ngIf=" displayGame">
+<div *ngIf="displayGame">
 
     <app-snake-game (closegame)="closeGame()" [data]="PersonName">
 
     </app-snake-game>
 
 </div>
+
 

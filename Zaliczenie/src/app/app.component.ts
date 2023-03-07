@@ -12,14 +12,14 @@ export interface Person {
 export class AppComponent {
   public displayGame = false;
   public snakeGame: string | null = null;
-
   public PersonName: Array<Person> = [];
+
 
   constructor() {}
 
-  public addPersonNameFromInput(data: Person) {
+  public addPersonNameFromInput(text: Person) {
     this.PersonName.push({
-      name: data.name,
+      name: text.name,
     });
   }
 
