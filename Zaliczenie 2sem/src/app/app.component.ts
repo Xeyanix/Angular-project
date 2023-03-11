@@ -8,7 +8,11 @@ import { SnakeService } from './snake.service';
 })
 export class AppComponent {
 
-
-  constructor(private _products: SnakeService) {}
+  public data = [];
+  constructor(private _products: SnakeService) {
+   this._products.load().subscribe((result) => {
+    // this.data = result['data'];
+   });
+  }
   title = 'http';
 }
