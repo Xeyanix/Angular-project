@@ -12,8 +12,6 @@ export interface Person {
 export class AppComponent {
   public snakeGame: string | null = null;
   public PersonName: Array<Person> = [];
-  
-  @Input() name = new EventEmitter<Person>();
 
   constructor() {}
 
