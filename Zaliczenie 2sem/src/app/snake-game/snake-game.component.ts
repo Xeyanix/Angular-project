@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PersonFormComponent } from '../person-form/person-form.component';
 import { UserInfoService } from '../user-info.service';
 
+import { SnakeService } from '../snake.service';
+
 @Component({
   selector: 'app-snake-game',
   templateUrl: './snake-game.component.html',
