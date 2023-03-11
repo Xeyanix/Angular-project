@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Person } from '../app.component';
 import { Router } from '@angular/router';
+import { UserInfoService } from '../user-info.service';
 
 @Component({
   selector: 'app-person-form',
@@ -12,8 +12,8 @@ export class PersonFormComponent implements OnInit {
     name: string;
     Email: string;
   } = {
-    name: ''!,
-    Email: ''!,
+    name: '',
+    Email: '',
   };
 
   public validationErros = {
@@ -22,23 +22,18 @@ export class PersonFormComponent implements OnInit {
   };
 
   public editing = true;
-  public table: string | null = null;
 
-  @Output() name = new EventEmitter<Person>();
+  constructor(
+    private _router: Router,
+    private _userInfoService: UserInfoService
+  ) {}
 
-  constructor(private _router: Router) {}
+  ngOnInit() {}
 
-  ngOnInit(): void {}
-
-  public play(): void {
-    this.name.emit({
-      name: this.snakeForm.name,
+  public play() {
+    this._userInfoService.setNewUserName({
+      snakeForm: this.snakeForm.name,
     });
-    this.snakeForm.name = '';
-
-    this.editing = false;
-    this.table = !this.snakeForm.name + ' ' + !this.snakeForm.Email;
-    // this.table = `${!this.snakeForm.name} ${!this.snakeForm.email}`;
 
     // alert('Success, access granted!');
     this._router.navigate(['/snake']);

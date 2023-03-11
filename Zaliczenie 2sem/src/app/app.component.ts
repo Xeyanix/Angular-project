@@ -1,8 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export interface Person {
-  name: string;
-}
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +6,6 @@ export interface Person {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public snakeGame: string | null = null;
-  public PersonName: Array<Person> = [];
-  
-  @Input() name = new EventEmitter<Person>();
 
   constructor() {}
-
-  public addPersonNameFromInput(tekst: Person) {
-    this.PersonName.push({
-      name: tekst.name,
-    });
-  }
-
-
 }

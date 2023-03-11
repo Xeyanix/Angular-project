@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Person } from '../app.component';
+import { Component, OnInit } from '@angular/core';
+import { PersonFormComponent } from '../person-form/person-form.component';
+import { UserInfoService } from '../user-info.service';
 
 @Component({
   selector: 'app-snake-game',
@@ -7,18 +8,19 @@ import { Person } from '../app.component';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
-
   public seconds = 0;
   public interval: string | number | NodeJS.Timer | undefined;
   public points = 0;
   public status: any;
-  public display: string | number | NodeJS.Timer | undefined;
+  public UserInfo: any;
 
-  @Input() public data: Array<Person> = []; //brak przekazywania name z inputa
- 
-  constructor() {}
+  constructor(private _userInfoService: UserInfoService) {
+    this._userInfoService.addPersonNameFromInput().subscribe((text) => {
+      this.UserInfo = text;
+    });
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   public startTimer() {
     this.interval = setInterval(() => {
@@ -38,7 +40,7 @@ export class SnakeGameComponent implements OnInit {
 
   public resetTimer() {
     this.seconds = 0;
-    clearInterval(this.interval)
+    clearInterval(this.interval);
     this.status = ['Ready'];
     this.points = 0;
   }
@@ -49,6 +51,5 @@ export class SnakeGameComponent implements OnInit {
 
   public countPoints() {
     this.points = this.points + 1;
-    
   }
 }
