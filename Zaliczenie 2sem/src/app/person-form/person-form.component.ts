@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Person } from '../app.component';
+import { Person } from '../definitions';
 import { Router } from '@angular/router';
 
 @Component({

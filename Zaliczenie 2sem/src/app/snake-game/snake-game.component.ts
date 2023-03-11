@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Person } from '../app.component';
+import { Person, Score } from '../definitions';
+import { SnakeService } from '../snake.service';
 
 @Component({
   selector: 'app-snake-game',
@@ -7,6 +8,7 @@ import { Person } from '../app.component';
   styleUrls: ['./snake-game.component.scss'],
 })
 export class SnakeGameComponent implements OnInit {
+  public Displaydata: Array<Score> = [];
 
   public seconds = 0;
   public interval: string | number | NodeJS.Timer | undefined;
@@ -14,7 +16,13 @@ export class SnakeGameComponent implements OnInit {
   public status: any;
   public display: string | number | NodeJS.Timer | undefined;
  
-  constructor() {}
+  constructor(private _SnakeService: SnakeService) {
+    this._SnakeService.load().subscribe((data: Score[])=> {
+      console.log(data);
+      this.Displaydata = data;
+    });
+
+  }
 
   ngOnInit(): void {}
 

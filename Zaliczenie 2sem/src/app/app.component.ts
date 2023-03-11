@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export interface Person {
-  name: string;
-}
+import { SnakeService } from './snake.service';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +8,14 @@ export interface Person {
 })
 export class AppComponent {
   public snakeGame: string | null = null;
-  public PersonName: Array<Person> = [];
 
-  constructor() {}
+  
+  constructor(private _products: SnakeService) {
 
-  public addPersonNameFromInput(tekst: Person) {
-    this.PersonName.push({
-      name: tekst.name,
-    });
   }
+  title = 'http';
+  
+  
 
 
 }

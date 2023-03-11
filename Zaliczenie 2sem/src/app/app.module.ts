@@ -6,6 +6,7 @@ import {RouterModule} from "@angular/router";
 import { AppComponent } from './app.component';
 import { PersonFormComponent } from './person-form/person-form.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
     BrowserModule,
     NgxSnakeModule, 
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'snake', component: SnakeGameComponent },
       { path: 'person-form', component: PersonFormComponent },
