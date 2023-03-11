@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Person } from '../app.component';
-import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-person-form',
