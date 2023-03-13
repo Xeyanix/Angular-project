@@ -8,7 +8,8 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { UserInfoService } from './user-info.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { SnakeService } from './snake.service';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [AppComponent, PersonFormComponent, SnakeGameComponent],
@@ -23,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: '**', redirectTo: 'person-form' },
     ]),
   ],
-  providers: [UserInfoService],
+  providers: [UserInfoService, SnakeService, DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

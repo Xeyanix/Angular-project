@@ -6,7 +6,7 @@
   Hello, {{ UserInfo.snakeForm }}!
 </div>
 <br />
-<div class="time"> Time in game: {{ seconds }}seconds </div>
+<div class="time"> Time in game: {{ startTime ? formatTime(elapsedTime) : ''  }} </div>
 <br />
 
 <div class="points"> Points: {{ points }} </div>

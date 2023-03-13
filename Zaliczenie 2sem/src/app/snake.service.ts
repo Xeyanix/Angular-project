@@ -9,7 +9,7 @@ export class SnakeService {
   constructor(private _http: HttpClient) {}
 
   load() {
-    const URL = 'https://edu.chrum.it/data/products.json';
+    const URL = 'https://edu.chrum.it/data/products.json'; //inny adres
     return this._http.get<Array<Category>>(URL);
   }
 }
