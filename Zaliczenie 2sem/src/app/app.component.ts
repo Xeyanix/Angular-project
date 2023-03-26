@@ -7,12 +7,10 @@ import { SnakeService } from './snake.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
-  public data = [];
   constructor(private _products: SnakeService) {
-   this._products.load().subscribe((result) => {
-    // this.data = result['data'];
-   });
+    this._products.load().subscribe((result) => {
+      console.log(result);
+    });
   }
   title = 'http';
 }

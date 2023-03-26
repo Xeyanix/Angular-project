@@ -17,6 +17,7 @@ export class SnakeGameComponent implements OnInit {
   public points = 0;
   public status: string = 'Ready';
   public UserInfo: any;
+  public data: any;
 
   constructor(
     private _userInfoService: UserInfoService,
@@ -26,7 +27,7 @@ export class SnakeGameComponent implements OnInit {
     this._userInfoService.addPersonNameFromInput().subscribe((text) => {
       this.UserInfo = text;
     });
-    // this.DataService.getData().subscribe((data: any) => console.log(data));
+    this.SnakeService.load().subscribe(data => this.data = data);
   }
 
   ngOnInit() {}

@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Category } from './definition';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { snake } from './definition';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class SnakeService {
+  getData() {
+    throw new Error('Method not implemented.');
+  }
   constructor(private _http: HttpClient) {}
 
   load() {
-    const URL = 'https://edu.chrum.it/data/products.json'; //inny adres
-    return this._http.get<Array<Category>>(URL);
+    const URL = 'http://scores.chrum.it/snake';
+    return this._http.get<Array<snake>>(URL, {
+      headers: {
+        Accept: 'application/json',
+      }
+    });
   }
+
 }

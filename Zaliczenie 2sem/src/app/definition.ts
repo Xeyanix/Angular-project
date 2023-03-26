@@ -1,4 +1,4 @@
-export interface Category {
-    name: string;
-    
+export interface snake {
+  name: string;
+  score: number;
 }
