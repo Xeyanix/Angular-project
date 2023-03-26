@@ -37,4 +37,12 @@
 
 
   <button class="center">O</button>
+
+
 </div>
+
+
+<div class="row todo-item" *ngFor="let todo of data">
+  <div class="col">
+    <textarea [(ngModel)]="todo.title"> </textarea>
+  </div>
