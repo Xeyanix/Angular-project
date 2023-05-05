@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSnakeModule } from 'ngx-snake';
 import { RouterModule } from '@angular/router';
@@ -16,8 +16,8 @@ import { DataService } from './data.service';
   imports: [
     BrowserModule,
     NgxSnakeModule,
-    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'snake', component: SnakeGameComponent },
       { path: 'person-form', component: PersonFormComponent },

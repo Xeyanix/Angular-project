@@ -24,9 +24,13 @@ export class SnakeGameComponent implements OnInit {
     private SnakeService: SnakeService,
     private DataService: DataService
   ) {
+
+    
     this._userInfoService.addPersonNameFromInput().subscribe((text) => {
       this.UserInfo = text;
     });
+
+
     this.SnakeService.load().subscribe(data => this.data = data);
   }
 
