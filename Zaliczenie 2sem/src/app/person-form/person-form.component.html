@@ -3,8 +3,7 @@
   <div class="form-control">
     <label for="name"> PLAYER NAME: </label>
 
-    <input  name="name" [disabled]="!editing" placeholder="Enter your Name"
-      formControlName="name" />
+    <input name="name" [disabled]="!editing" placeholder="Enter your Name" formControlName="name" />
 
     <span *ngIf="nameGetter?.touched && nameGetter?.errors?.['required']" class="error">
       {{ validationErros.required }}
@@ -13,8 +12,7 @@
 
   <div class="form-control">
     <label for="email"> EMAIL: </label>
-    <input name="email" [disabled]="!editing" placeholder="Enter email adress"
-      formControlName="Email" />
+    <input name="email" [disabled]="!editing" placeholder="Enter email adress" formControlName="Email" />
     <span *ngIf="emailGetter?.touched && emailGetter?.errors?.['required']" class="error">
       {{ validationErros.required }}
     </span>
@@ -22,6 +20,19 @@
       {{ validationErros.Email }}
     </span>
   </div>
+
+  <div class="form-control">
+    <label for="email"> TOKEN: </label>
+    <input name="token" [disabled]="!editing" placeholder="Enter your token" formControlName="token" required
+      minlength="4" maxlength="4" pattern="^0[1-9]|[1-9]\d$" />
+    <span *ngIf="tokenGetter?.touched && tokenGetter?.errors?.['required']" class="error">
+      {{ validationErros.required }}
+    </span>
+    <span *ngIf="tokenGetter?.touched && tokenGetter?.errors?.['minlength']" class="error">
+      {{ validationErros.required_token }}
+    </span>
+  </div>
+
 </form>
 
 <div class="play-button">

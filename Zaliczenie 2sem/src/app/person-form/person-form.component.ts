@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserInfoService } from '../user-info.service';
-import { FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-person-form',
@@ -19,20 +19,24 @@ export class PersonFormComponent implements OnInit {
 
   public validationErros = {
     required: 'To pole jest wymagane',
+    required_token: 'To pole musi zawierac 4 znaki',
     Email: 'Podałeś błędny email. Wpisz prawidłowy email',
   };
 
   public myForm = this._fb.group({
-    name:  ['', [Validators.required]],
+    name: ['', [Validators.required]],
     Email: ['', [Validators.required]],
+    token: ['', [Validators.required, Validators.minLength(4)]],
   });
 
   public get nameGetter() {
     return this.myForm.get('name');
   }
-
   public get emailGetter() {
     return this.myForm.get('Email');
+  }
+  public get tokenGetter() {
+    return this.myForm.get('token');
   }
 
   public editing = true;
