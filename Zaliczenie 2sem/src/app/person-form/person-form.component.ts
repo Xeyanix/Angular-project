@@ -42,7 +42,6 @@ export class PersonFormComponent implements OnInit {
   public editing = true;
   public color: string | undefined;
   public availableColors = [
-    'lightblue',
     'gray',
 ];
 
