@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 import { UserInfoService } from '../user-info.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -40,12 +40,28 @@ export class PersonFormComponent implements OnInit {
   }
 
   public editing = true;
+  public color: string | undefined;
+  public availableColors = [
+    'lightblue',
+    'gray',
+];
 
   constructor(
     private _router: Router,
     private _userInfoService: UserInfoService,
-    private _fb: FormBuilder
-  ) {}
+    private _fb: FormBuilder,
+    private _route: ActivatedRoute
+  ) { 
+    this._route.params.subscribe((params) => {
+    this.color = params['color'];
+  });}
+
+  selectColor(color: any): void {
+    this._router.navigate(['/snake', color]);
+    this._userInfoService.setNewUserName({
+      snakeForm: this.myForm.get('name')?.value,
+    });
+  }
 
   ngOnInit() {}
 
@@ -55,6 +71,13 @@ export class PersonFormComponent implements OnInit {
     });
 
     // alert('Success, access granted!');
-    this._router.navigate(['/snake']);
+    this._router.navigate(['/snake/game']);
+  }
+  
+  onColorChange(event:any): void {
+    const color = event.target.value;
+    this._router.navigate(['/person-form', color], {
+      relativeTo: this._route,
+    });
   }
 }

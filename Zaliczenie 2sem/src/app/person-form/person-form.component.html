@@ -1,30 +1,32 @@
-<h3>WELCOME TO NG-SNAKE</h3>
-<form [formGroup]="myForm" class="form">
-  <div class="form-control">
-    <label for="name"> PLAYER NAME: </label>
-
-    <input name="name" [disabled]="!editing" placeholder="Enter your Name" formControlName="name" />
-
-    <span *ngIf="nameGetter?.touched && nameGetter?.errors?.['required']" class="error">
-      {{ validationErros.required }}
-    </span>
-  </div>
-
-  <div class="form-control">
-    <label for="email"> EMAIL: </label>
-    <input name="email" [disabled]="!editing" placeholder="Enter email adress" formControlName="Email" />
-    <span *ngIf="emailGetter?.touched && emailGetter?.errors?.['required']" class="error">
-      {{ validationErros.required }}
-    </span>
-    <span *ngIf="emailGetter?.touched && emailGetter?.errors?.['pattern']" class="error">
-      {{ validationErros.Email }}
-    </span>
-  </div>
-
-  <div class="form-control">
-    <label for="email"> TOKEN: </label>
+<div [style.background]="color">
+  
+  <h3>WELCOME TO NG-SNAKE</h3>
+  <form [formGroup]="myForm" class="form">
+    <div class="form-control">
+      <label for="name"> PLAYER NAME: </label>
+      
+      <input name="name" [disabled]="!editing" placeholder="Enter your Name" formControlName="name" />
+      
+      <span *ngIf="nameGetter?.touched && nameGetter?.errors?.['required']" class="error">
+        {{ validationErros.required }}
+      </span>
+    </div>
+    
+    <div class="form-control">
+      <label for="email"> EMAIL: </label>
+      <input name="email" [disabled]="!editing" placeholder="Enter email adress" formControlName="Email" />
+      <span *ngIf="emailGetter?.touched && emailGetter?.errors?.['required']" class="error">
+        {{ validationErros.required }}
+      </span>
+      <span *ngIf="emailGetter?.touched && emailGetter?.errors?.['pattern']" class="error">
+        {{ validationErros.Email }}
+      </span>
+    </div>
+    
+    <div class="form-control">
+      <label for="email"> TOKEN: </label>
     <input name="token" [disabled]="!editing" placeholder="Enter your token" formControlName="token" required
-      minlength="4" maxlength="4" pattern="^0[1-9]|[1-9]\d$" />
+    minlength="4" maxlength="4" pattern="^0[1-9]|[1-9]\d$" />
     <span *ngIf="tokenGetter?.touched && tokenGetter?.errors?.['required']" class="error">
       {{ validationErros.required }}
     </span>
@@ -32,7 +34,19 @@
       {{ validationErros.required_token }}
     </span>
   </div>
+  
+  <!-- <div class="form-control">
+    <label> COLOR: </label>
 
+    <span *ngIf="tokenGetter?.touched && tokenGetter?.errors?.['required']" class="error">
+      {{ validationErros.required }}
+    </span>
+    <select (change)="onColorChange($event)">
+      <option  *ngFor="let color of availableColors">
+        {{ color }}
+      </option>
+    </select>
+  </div> -->
 </form>
 
 <div class="play-button">
@@ -40,3 +54,13 @@
     Play
   </button>
 </div>
+
+
+<div *ngFor="let color of availableColors">
+  <button [disabled]="myForm.invalid" (click)="selectColor(color)">
+    {{ color }}
+  </button>
+</div>
+
+</div>
+

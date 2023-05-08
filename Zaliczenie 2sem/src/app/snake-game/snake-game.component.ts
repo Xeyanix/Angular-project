@@ -3,6 +3,7 @@ import { PersonFormComponent } from '../person-form/person-form.component';
 import { UserInfoService } from '../user-info.service';
 import { SnakeService } from '../snake.service';
 import { DataService } from '../data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-snake-game',
@@ -18,20 +19,25 @@ export class SnakeGameComponent implements OnInit {
   public status: string = 'Ready';
   public UserInfo: any;
   public data: any;
-
+  public color: string | undefined;
+  public availableColors = ['lightblue', 'gray'];
+  
   constructor(
     private _userInfoService: UserInfoService,
     private SnakeService: SnakeService,
-    private DataService: DataService
+    private DataService: DataService,
+    private _route: ActivatedRoute,
+    private _router: Router
   ) {
-
-    
     this._userInfoService.addPersonNameFromInput().subscribe((text) => {
       this.UserInfo = text;
     });
 
+    this._route.params.subscribe((params) => {
+      this.color = params['color'];
+    });
 
-    this.SnakeService.load().subscribe(data => this.data = data);
+    this.SnakeService.load().subscribe((data) => (this.data = data));
   }
 
   ngOnInit() {}
@@ -82,5 +88,12 @@ export class SnakeGameComponent implements OnInit {
     return `${hours.toString().padStart(2, '0')}:${minutes
       .toString()
       .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  onColorChange(event:any): void {
+    const color = event.target.value;
+    this._router.navigate(['/snake', color], {
+      relativeTo: this._route,
+    });
   }
 }

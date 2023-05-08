@@ -19,7 +19,9 @@ import { DataService } from './data.service';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: 'snake', component: SnakeGameComponent },
+      { path: 'snake' , component: SnakeGameComponent },
+      { path: 'snake/:color', component: SnakeGameComponent },
+      { path: 'person-form/:color', component: PersonFormComponent },
       { path: 'person-form', component: PersonFormComponent },
       { path: '**', redirectTo: 'person-form' },
     ]),

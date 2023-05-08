@@ -1,45 +1,60 @@
-<div class="back-button">
-  <button class="backbutton" [routerLink]="['person-form']">Exit Game</button>
-</div>
-<br />
-<div class="welcome-user-text">
-  Hello, {{ UserInfo.snakeForm }}!
-</div>
-<br />
-<div class="time"> Time in game: {{ startTime ? formatTime(elapsedTime) : '' }} </div>
-<br />
+<div [style.background]="color">
+  <div class="back-button">
+    <button class="backbutton" [routerLink]="['person-form']">Exit Game</button>
+  </div>
+  <br />
+  <div class="welcome-user-text">
+    Hello, {{ UserInfo.snakeForm }}!
+  </div>
+  <br />
+  <div class="time"> Time in game: {{ startTime ? formatTime(elapsedTime) : '' }} </div>
+  <br />
 
-<div class="points"> Points: {{ points }} </div>
-<br />
-<div class="gamestatus"> Status: {{ status }} </div>
-<br />
-<div class="game">
-  <ngx-snake #game (foodEaten)="countPoints()" (gameOver)="gameover()"> </ngx-snake>
+  <div class="points"> Points: {{ points }} </div>
+  <br />
+  <div class="gamestatus"> Status: {{ status }} </div>
+  <br />
+  <div class="game">
+    <ngx-snake #game (foodEaten)="countPoints()" (gameOver)="gameover()"> </ngx-snake>
 
-  <div class="start-stop-reset">
-    <button class="start" (click)="game.actionStart()" (click)="startTimer()">Start</button>
-    <br />
-    <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()">Pause</button>
-    <br />
-    <button class="reset" (click)="game.actionReset()" (click)="resetTimer()">Reset</button>
-    <br />
+    <div class="start-stop-reset">
+      <button class="start" (click)="game.actionStart()" (click)="startTimer()">Start</button>
+      <br />
+      <button class="pause" (click)="game.actionStop()" (click)="pauseTimer()">Pause</button>
+      <br />
+      <button class="reset" (click)="game.actionReset()" (click)="resetTimer()">Reset</button>
+      <br />
+    </div>
+
+    <div class="position-button">
+      <button class="up" (click)="game.actionUp()">></button>
+      <br />
+      <button class="left" (click)="game.actionLeft()">></button>
+      <br />
+      <button class="right" (click)="game.actionRight()">></button>
+      <br />
+      <button class="down" (click)="game.actionDown()">></button>
+    </div>
+
+    <button class="center">O</button>
+
+    <div>
+      Dark/light mode?
+      <select (change)="onColorChange($event)">
+        <option *ngFor="let color of availableColors">
+          {{ color }}
+        </option>
+      </select>
+    </div>
+    
+    Tablica wyników
+    <tr *ngFor="let item of data">
+      <td>{{ item.name }}:{{ item.score }}</td>
+    </tr>
+
   </div>
 
-  <div class="position-button">
-    <button class="up" (click)="game.actionUp()">></button>
-    <br />
-    <button class="left" (click)="game.actionLeft()">></button>
-    <br />
-    <button class="right" (click)="game.actionRight()">></button>
-    <br />
-    <button class="down" (click)="game.actionDown()">></button>
-  </div>
 
-  <button class="center">O</button>
 
-  Tablica wyników
-  <tr *ngFor="let item of data">
-    <td>{{ item.name }}:{{ item.score }}</td>
-  </tr>
 
 </div>
