@@ -10,10 +10,12 @@ import { UserInfoService } from './user-info.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SnakeService } from './snake.service';
 import { DataService } from './data.service';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PersonFormComponent, SnakeGameComponent],
+  declarations: [AppComponent, PersonFormComponent, SnakeGameComponent, SortPipe],
   imports: [
+    FormsModule,
     BrowserModule,
     NgxSnakeModule,
     HttpClientModule,

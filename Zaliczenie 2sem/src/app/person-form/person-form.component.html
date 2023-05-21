@@ -55,7 +55,6 @@
   </button>
 </div>
 
-
 <div *ngFor="let color of availableColors">
   <button [disabled]="myForm.invalid" (click)="selectColor(color)">
     {{ color }}

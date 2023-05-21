@@ -21,7 +21,8 @@ export class SnakeGameComponent implements OnInit {
   public data: any;
   public color: string | undefined;
   public availableColors = ['lightblue', 'gray'];
-  
+  public method: 'PASC' | 'PDSC' = 'PASC';
+
   constructor(
     private _userInfoService: UserInfoService,
     private SnakeService: SnakeService,
@@ -90,7 +91,7 @@ export class SnakeGameComponent implements OnInit {
       .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
 
-  onColorChange(event:any): void {
+  onColorChange(event: any): void {
     const color = event.target.value;
     this._router.navigate(['/snake', color], {
       relativeTo: this._route,
