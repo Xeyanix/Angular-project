@@ -1,0 +1,35 @@
+
+
+
+<h2>Add New Item</h2>
+<form (submit)="createNewItem()">
+  <div>
+    <label>Name: </label>
+    <input type="text" [(ngModel)]="newItem.name" name="name" required>
+  </div>
+  <div>
+    <label>Description: </label>
+    <input type="text" [(ngModel)]="newItem.description" name="description" required>
+  </div>
+  <div>
+    <label>Price: </label>
+    <input type="number" [(ngModel)]="newItem.price" name="price" required>
+  </div>
+  <button type="submit">Add Item</button>
+</form>
+
+
+
+<div *ngIf="items.length > 0">
+  <h2>Items List</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      <h3>{{ item.name }}</h3>
+      <p>Description: {{ item.description }}</p>
+      <p>Price: {{ item.price }}</p>
+      <button (click)="editItem(item)">Edit</button>
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </li>
+  </ul>
+</div>
+
